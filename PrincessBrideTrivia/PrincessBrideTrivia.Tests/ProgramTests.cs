@@ -72,7 +72,7 @@ namespace PrincessBrideTrivia.Tests
             Assert.AreEqual(expectedString, percentage);
         }
 
-
+        [TestMethod]
         private static void GenerateQuestionsFile(string filePath, int numberOfQuestions)
         {
             for (int i = 0; i < numberOfQuestions; i++)
