@@ -86,5 +86,19 @@ namespace PrincessBrideTrivia.Tests
                 File.AppendAllLines(filePath, lines);
             }
         }
+
+        //Test method for suggested new feature
+        [TestMethod]
+        [DataRow(0, 7, "Count Rugen")]
+        [DataRow(5, 7, "Inigo Montoya")]
+        [DataRow(7, 7, "Wesley")]
+        public void GetCharacterName_ReturnsNameOfCharacter(int numberOfCorrectGuesses,
+            int numberOfQuestions, string expectedName)
+        {
+            string percentCorrect = Program.GetPercentCorrect(numberOfCorrectGuesses, numberOfQuestions);
+            string characterName = Program.GetCharacterName(percentCorrect);
+
+            Assert.AreEqual(characterName, expectedName);
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace PrincessBrideTrivia
                 }
             }
             Console.WriteLine("You got " + GetPercentCorrect(numberCorrect, questions.Length) + " correct");
+            Console.WriteLine("Based off your score, you must be " + GetCharacterName(GetPercentCorrect(numberCorrect, questions.Length)));
         }
 
         public static string GetPercentCorrect(int numberCorrectAnswers, int numberOfQuestions)
@@ -94,6 +95,42 @@ namespace PrincessBrideTrivia
                 questions[i] = question;
             }
             return questions;
+        }
+
+        //Proposed new feature for the app
+        public static string GetCharacterName(string percentCorrect) 
+        {
+            if (percentCorrect == "0%") 
+            {
+                return "Count Rugen"; 
+            }
+
+            if (percentCorrect == "14%")
+            {
+                return "Prince Humperdink";
+            }
+
+            if (percentCorrect == "28%")
+            {
+                return "Vizzini";
+            }
+
+            if (percentCorrect == "42%")
+            {
+                return "Fezzik";
+            }
+
+            if (percentCorrect == "57%")
+            {
+                return "Buttercup";
+            }
+
+            if (percentCorrect == "71%")
+            {
+                return "Inigo Montoya";
+            }
+
+            return "Wesley";
         }
     }
 }
