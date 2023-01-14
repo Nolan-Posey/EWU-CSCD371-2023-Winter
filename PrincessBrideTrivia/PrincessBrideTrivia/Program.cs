@@ -20,7 +20,7 @@ namespace PrincessBrideTrivia
                 }
             }
             Console.WriteLine("You got " + GetPercentCorrect(numberCorrect, questions.Length) + " correct");
-            Console.WriteLine("Based off your score, you must be " + GetCharacterName(GetPercentCorrect(numberCorrect, questions.Length)));
+            Console.WriteLine("Your rank: " + GetCharacterName(numberCorrect));
         }
 
         public static string GetPercentCorrect(int numberCorrectAnswers, int numberOfQuestions)
@@ -98,39 +98,28 @@ namespace PrincessBrideTrivia
         }
 
         //Proposed new feature for the app
-        public static string GetCharacterName(string percentCorrect) 
+        public static string GetCharacterName(int numberCorrectAnswers)
         {
-            if (percentCorrect == "0%") 
+            switch(numberCorrectAnswers)
             {
-                return "Count Rugen"; 
+                case 0:
+                    return "Count Rugen";
+                case 1:
+                    return "Prince Humperdink";
+                case 2:
+                    return "Vizzini";
+                case 3:
+                    return "The \"mawwiage\" bishop";
+                case 4:
+                    return "Fezzik";
+                case 5:
+                    return "Buttercup";
+                case 6:
+                    return "Inigo Montoya";
+                case 7:
+                    return "Wesley";
             }
-
-            if (percentCorrect == "14%")
-            {
-                return "Prince Humperdink";
-            }
-
-            if (percentCorrect == "28%")
-            {
-                return "Vizzini";
-            }
-
-            if (percentCorrect == "42%")
-            {
-                return "Fezzik";
-            }
-
-            if (percentCorrect == "57%")
-            {
-                return "Buttercup";
-            }
-
-            if (percentCorrect == "71%")
-            {
-                return "Inigo Montoya";
-            }
-
-            return "Wesley";
+            return "";
         }
     }
 }

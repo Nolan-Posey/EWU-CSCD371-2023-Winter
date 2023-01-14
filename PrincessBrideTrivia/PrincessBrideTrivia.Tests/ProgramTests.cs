@@ -89,14 +89,12 @@ namespace PrincessBrideTrivia.Tests
 
         //Test method for suggested new feature
         [TestMethod]
-        [DataRow(0, 7, "Count Rugen")]
-        [DataRow(5, 7, "Inigo Montoya")]
-        [DataRow(7, 7, "Wesley")]
-        public void GetCharacterName_ReturnsNameOfCharacter(int numberOfCorrectGuesses,
-            int numberOfQuestions, string expectedName)
+        [DataRow(0, "Count Rugen")]
+        [DataRow(5, "Buttercup")]
+        [DataRow(7, "Wesley")]
+        public void GetCharacterName_ReturnsNameOfCharacter(int numberOfCorrectGuesses, string expectedName)
         {
-            string percentCorrect = Program.GetPercentCorrect(numberOfCorrectGuesses, numberOfQuestions);
-            string characterName = Program.GetCharacterName(percentCorrect);
+            string characterName = Program.GetCharacterName(numberOfCorrectGuesses);
 
             Assert.AreEqual(characterName, expectedName);
         }
